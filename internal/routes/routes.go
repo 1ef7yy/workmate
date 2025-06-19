@@ -15,7 +15,6 @@ func SetupRoutes(taskHandler *handlers.TaskHandler) {
 	http.HandleFunc("DELETE /tasks/{id}", taskHandler.DeleteTask)
 }
 
-
 func Ping(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	_, err := w.Write([]byte("OK"))

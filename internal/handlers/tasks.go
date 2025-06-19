@@ -105,4 +105,3 @@ func (h *TaskHandler) respondJSON(w http.ResponseWriter, statusCode int, payload
 		return
 	}
 }
-
