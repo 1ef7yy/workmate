@@ -29,7 +29,7 @@ func (h *TaskHandler) ListTasks(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if tasks == nil {
+	if len(tasks) == 0 {
 		http.Error(w, "tasks not found", http.StatusNotFound)
 		return
 	}
@@ -105,3 +105,4 @@ func (h *TaskHandler) respondJSON(w http.ResponseWriter, statusCode int, payload
 		return
 	}
 }
+

@@ -20,6 +20,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Task'
+        '404':
+          description: Tasks not found
 
     post:
       summary: Create a task
@@ -49,6 +51,8 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Task"
+        '400':
+          description: Bad request (invalid task ID)
         '404':
           description: Not found
 
@@ -63,6 +67,8 @@ paths:
       responses:
         '204':
           description: No content
+        '400':
+          description: Bad request
         '404':
           description: Not found
 
@@ -80,4 +86,18 @@ components:
         created_at:
           type: string
           format: date-time
+        started_at:
+          type: string
+          format: date-time
+        completed_at:
+          type: string
+          format: date-time
+        duration:
+          type: string
+          example: 1m30s
+        result:
+          type: string
+        errorMsg:
+          type: string
+
 

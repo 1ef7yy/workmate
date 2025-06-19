@@ -5,7 +5,8 @@ services:
       - "8080:8080"
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "wget", "--spider", "http://localhost:8080/tasks"]
+      test: ["CMD-SHELL", "wget -qO- http://localhost:8080/healthz | grep -q OK || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 3
+      start_period: 5s
