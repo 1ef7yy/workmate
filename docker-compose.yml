@@ -1,0 +1,11 @@
+services:
+  task-manager:
+    build: .
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8080/tasks"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
