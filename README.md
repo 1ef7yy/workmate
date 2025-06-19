@@ -8,6 +8,15 @@
 docker compose up
 ```
 
+Либо
+
+```bash
+go run cmd/app/main.go
+```
+
+
+
+
 ## Postman коллекция
 
 ```
